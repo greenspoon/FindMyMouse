@@ -1,14 +1,17 @@
 ﻿Public Class Key
+    'user32 lib for getting the current state of a key
+    Private Declare Function GetAsyncKeyState Lib "user32" (ByVal vKey As System.Windows.Forms.Keys) As Short
 
     Property KeyName As String
-    Property KeyValue As Integer
-    Public Const isMODIFIER As Integer = -1337
+    Property KeyValue As Keys
 
-    Private Declare Function GetKeyState Lib "user32" (ByVal nVirtKey As Short) As Integer
+    Public ReadOnly Property isPressed As Boolean
+        Get
+            Return GetAsyncKeyState(Me.KeyValue) <> 0
+        End Get
+    End Property
 
-    Private Const KEY_PRESSED As Integer = -127
-
-    Sub New(keyname As String, keyValue As Integer)
+    Sub New(keyname As String, keyValue As Keys)
 
         Me.KeyName = keyname
         Me.KeyValue = keyValue
@@ -28,38 +31,4 @@
         Return KeyName
     End Function
 
-    Public Const CONTROL As String = "Control"
-    Public Const ALT As String = "Alt"
-    Public Const SHIFT As String = "Shift"
-
-    Private Function isModifierPressed(name As String) As Boolean
-
-        Select Case name
-            Case CONTROL
-                Return My.Computer.Keyboard.CtrlKeyDown
-            Case ALT
-                Return My.Computer.Keyboard.AltKeyDown
-            Case SHIFT
-                Return My.Computer.Keyboard.ShiftKeyDown
-        End Select
-
-        Return False
-
-    End Function
-
-    Public ReadOnly Property isPressed As Boolean
-        Get
-            Return isKeyPressed()
-        End Get
-    End Property
-
-    Private Function isKeyPressed() As Boolean
-
-        If KeyValue = isMODIFIER Then
-            Return isModifierPressed(KeyName)
-        End If
-
-        Return GetKeyState(CShort(Me.KeyValue)) = KEY_PRESSED
-
-    End Function
 End Class

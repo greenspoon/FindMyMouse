@@ -59,5 +59,42 @@ Namespace My.Resources
                 resourceCulture = value
             End Set
         End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Exit.
+        '''</summary>
+        Friend ReadOnly Property MenuItemExit() As String
+            Get
+                Return ResourceManager.GetString("MenuItemExit", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Open.
+        '''</summary>
+        Friend ReadOnly Property MenuItemOpen() As String
+            Get
+                Return ResourceManager.GetString("MenuItemOpen", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        '''</summary>
+        Friend ReadOnly Property mouse() As System.Drawing.Icon
+            Get
+                Dim obj As Object = ResourceManager.GetObject("mouse", resourceCulture)
+                Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Now in System tray!.
+        '''</summary>
+        Friend ReadOnly Property NowInTray() As String
+            Get
+                Return ResourceManager.GetString("NowInTray", resourceCulture)
+            End Get
+        End Property
     End Module
 End Namespace

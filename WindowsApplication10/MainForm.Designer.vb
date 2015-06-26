@@ -22,6 +22,7 @@ Partial Class FindMouseForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Key1ComboBox = New System.Windows.Forms.ComboBox()
@@ -31,6 +32,8 @@ Partial Class FindMouseForm
         Me.Key2Label = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.StartWindowsCheckBox = New System.Windows.Forms.CheckBox()
+        Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.YTextBox = New FindMyMouse.NumTextbox()
         Me.XTextBox = New FindMyMouse.NumTextbox()
         Me.GroupBox1.SuspendLayout()
@@ -127,6 +130,21 @@ Partial Class FindMouseForm
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Shortcut"
         '
+        'StartWindowsCheckBox
+        '
+        Me.StartWindowsCheckBox.AutoSize = True
+        Me.StartWindowsCheckBox.Location = New System.Drawing.Point(12, 225)
+        Me.StartWindowsCheckBox.Name = "StartWindowsCheckBox"
+        Me.StartWindowsCheckBox.Size = New System.Drawing.Size(148, 21)
+        Me.StartWindowsCheckBox.TabIndex = 12
+        Me.StartWindowsCheckBox.Text = "Start with Windows"
+        Me.StartWindowsCheckBox.UseVisualStyleBackColor = True
+        '
+        'NotifyIcon1
+        '
+        Me.NotifyIcon1.Text = "NotifyIcon1"
+        Me.NotifyIcon1.Visible = True
+        '
         'YTextBox
         '
         Me.YTextBox.Location = New System.Drawing.Point(173, 58)
@@ -147,18 +165,20 @@ Partial Class FindMouseForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(341, 237)
+        Me.ClientSize = New System.Drawing.Size(341, 280)
+        Me.Controls.Add(Me.StartWindowsCheckBox)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.Name = "FindMouseForm"
-        Me.Text = "Find Mouse"
+        Me.Text = "Find My Mouse"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents Label1 As System.Windows.Forms.Label
@@ -172,5 +192,7 @@ Partial Class FindMouseForm
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents YTextBox As FindMyMouse.NumTextbox
     Friend WithEvents XTextBox As FindMyMouse.NumTextbox
+    Friend WithEvents StartWindowsCheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents NotifyIcon1 As System.Windows.Forms.NotifyIcon
 
 End Class
