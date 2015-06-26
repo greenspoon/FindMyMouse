@@ -137,8 +137,8 @@ Partial Class FindMouseForm
         Me.AimMouseLocationButton.Name = "AimMouseLocationButton"
         Me.AimMouseLocationButton.Size = New System.Drawing.Size(35, 35)
         Me.AimMouseLocationButton.TabIndex = 13
-        Me.ToolTip1.SetToolTip(Me.AimMouseLocationButton, "Press and hold mit the left mouse button and aim for the location you want your c" & _
-        "ursor to appear, when you fire the shortcut.")
+        Me.ToolTip1.SetToolTip(Me.AimMouseLocationButton, "Press and hold the left mouse button and aim for the location you want your curso" & _
+        "r to appear, when you fire the shortcut." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10))
         Me.AimMouseLocationButton.UseVisualStyleBackColor = True
         '
         'GroupBox2
