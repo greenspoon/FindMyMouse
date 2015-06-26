@@ -209,6 +209,7 @@ Public Class FindMouseForm
 
 
     Private Sub AimMouseLocationButton_MouseDown(sender As Object, e As MouseEventArgs) Handles AimMouseLocationButton.MouseDown
+
         If e.Button = Windows.Forms.MouseButtons.Left Then
 
             Dim timer As New Timer() With {
@@ -222,20 +223,20 @@ Public Class FindMouseForm
                                        YTextBox.Text = LocalMousePosition.Y.ToString
 
                                        If Key.GetAsyncKeyState(Keys.LButton) = 0 Then
+
                                            timer.Stop()
                                            Me.Cursor = Cursors.Default
+
                                        End If
 
                                    End Sub
             timer.Start()
+
             Me.Cursor = Cursors.Cross
+
         End If
 
     End Sub
 
-
-    Private Sub XTextBox_Leave(sender As Object, e As EventArgs)
-
-    End Sub
 End Class
 
