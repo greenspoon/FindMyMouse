@@ -45,11 +45,13 @@ Public Class FindMouseForm
     End Sub
 
 
-    Private Sub XTextBox_Leave(sender As Object, e As EventArgs) Handles XTextBox.Leave, YTextBox.Leave
+    Private Sub TextBoxes_Event(sender As Object, e As EventArgs) Handles XTextBox.TextChanged, YTextBox.TextChanged
 
         'Save the mouse cursor location to the Settings by leaving a Textbox
-        My.Settings.MousePoint = New Point(CInt(XTextBox.Text), CInt(YTextBox.Text))
-        My.Settings.Save()
+        If isStared Then
+            My.Settings.MousePoint = New Point(CInt(XTextBox.Text), CInt(YTextBox.Text))
+            My.Settings.Save()
+        End If
 
     End Sub
 
@@ -203,6 +205,37 @@ Public Class FindMouseForm
         Me.WindowState = FormWindowState.Normal
         NotifyIcon1.Visible = False
         Me.TopMost = False
+    End Sub
+
+
+    Private Sub AimMouseLocationButton_MouseDown(sender As Object, e As MouseEventArgs) Handles AimMouseLocationButton.MouseDown
+        If e.Button = Windows.Forms.MouseButtons.Left Then
+
+            Dim timer As New Timer() With {
+                    .Interval = 10
+                }
+            AddHandler timer.Tick, Sub()
+
+                                       Dim LocalMousePosition = Cursor.Position
+
+                                       XTextBox.Text = LocalMousePosition.X.ToString
+                                       YTextBox.Text = LocalMousePosition.Y.ToString
+
+                                       If Key.GetAsyncKeyState(Keys.LButton) = 0 Then
+                                           timer.Stop()
+                                           Me.Cursor = Cursors.Default
+                                       End If
+
+                                   End Sub
+            timer.Start()
+            Me.Cursor = Cursors.Cross
+        End If
+
+    End Sub
+
+
+    Private Sub XTextBox_Leave(sender As Object, e As EventArgs)
+
     End Sub
 End Class
 

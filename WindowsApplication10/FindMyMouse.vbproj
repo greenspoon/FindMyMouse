@@ -129,6 +129,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="mouse.ico" />
+    <None Include="Resources\scope.png" />
     <None Include="Resources\mouse.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

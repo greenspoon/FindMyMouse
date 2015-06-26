@@ -31,9 +31,12 @@ Partial Class FindMouseForm
         Me.Key1Label = New System.Windows.Forms.Label()
         Me.Key2Label = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.XYLabel = New System.Windows.Forms.Label()
+        Me.AimMouseLocationButton = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.StartWindowsCheckBox = New System.Windows.Forms.CheckBox()
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.YTextBox = New FindMyMouse.NumTextbox()
         Me.XTextBox = New FindMyMouse.NumTextbox()
         Me.GroupBox1.SuspendLayout()
@@ -105,6 +108,8 @@ Partial Class FindMouseForm
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.XYLabel)
+        Me.GroupBox1.Controls.Add(Me.AimMouseLocationButton)
         Me.GroupBox1.Controls.Add(Me.YTextBox)
         Me.GroupBox1.Controls.Add(Me.XTextBox)
         Me.GroupBox1.Controls.Add(Me.Label1)
@@ -115,6 +120,26 @@ Partial Class FindMouseForm
         Me.GroupBox1.TabIndex = 10
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Mouse Location"
+        '
+        'XYLabel
+        '
+        Me.XYLabel.AutoSize = True
+        Me.XYLabel.Location = New System.Drawing.Point(245, 38)
+        Me.XYLabel.Name = "XYLabel"
+        Me.XYLabel.Size = New System.Drawing.Size(0, 17)
+        Me.XYLabel.TabIndex = 14
+        '
+        'AimMouseLocationButton
+        '
+        Me.AimMouseLocationButton.BackgroundImage = Global.FindMyMouse.My.Resources.Resources.scope
+        Me.AimMouseLocationButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.AimMouseLocationButton.Location = New System.Drawing.Point(261, 12)
+        Me.AimMouseLocationButton.Name = "AimMouseLocationButton"
+        Me.AimMouseLocationButton.Size = New System.Drawing.Size(35, 35)
+        Me.AimMouseLocationButton.TabIndex = 13
+        Me.ToolTip1.SetToolTip(Me.AimMouseLocationButton, "Press and hold mit the left mouse button and aim for the location you want your c" & _
+        "ursor to appear, when you fire the shortcut.")
+        Me.AimMouseLocationButton.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
@@ -194,5 +219,8 @@ Partial Class FindMouseForm
     Friend WithEvents XTextBox As FindMyMouse.NumTextbox
     Friend WithEvents StartWindowsCheckBox As System.Windows.Forms.CheckBox
     Friend WithEvents NotifyIcon1 As System.Windows.Forms.NotifyIcon
+    Friend WithEvents AimMouseLocationButton As System.Windows.Forms.Button
+    Friend WithEvents XYLabel As System.Windows.Forms.Label
+    Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
 
 End Class

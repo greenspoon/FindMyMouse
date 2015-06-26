@@ -1,6 +1,6 @@
 ﻿Public Class Key
     'user32 lib for getting the current state of a key
-    Private Declare Function GetAsyncKeyState Lib "user32" (ByVal vKey As System.Windows.Forms.Keys) As Short
+    Public Declare Function GetAsyncKeyState Lib "user32" (ByVal vKey As System.Windows.Forms.Keys) As Short
 
     Property KeyName As String
     Property KeyValue As Keys
