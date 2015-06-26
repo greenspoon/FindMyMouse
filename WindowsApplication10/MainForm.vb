@@ -24,16 +24,9 @@ Public Class FindMouseForm
         MouseTimer.Interval = 10
 
         AddHandler MouseTimer.Tick, Sub()
-                                        'getting the selected items from the comboboxes and casting into Key
-                                        Dim selectedKeys = {DirectCast(Key1ComboBox.SelectedItem, Key), DirectCast(Key2ComboBox.SelectedItem, Key)}
 
-                                        'selecting just the keys that are not set to "None"
-                                        Dim notNoneKeys = (From it In selectedKeys Where it.KeyValue <> Keys.None).ToList
-
-                                        If notNoneKeys.Count > 0 Then
-
-                                            'if every key is pressed set the locatin of the cursor
-                                            If (From itm In notNoneKeys Where itm.isPressed = True).Count = notNoneKeys.Count Then
+                                        If DeleteButtonListBox1.Items.Count > 0 Then
+                                            If (From itm In DeleteButtonListBox1.Items Where DirectCast(itm.DataboundItem, Key).isPressed = True).Count = DeleteButtonListBox1.Items.Count Then
                                                 Windows.Forms.Cursor.Position = MousePoint
                                             End If
                                         End If
@@ -55,27 +48,7 @@ Public Class FindMouseForm
 
     End Sub
 
-    Private Sub FillComboBoxes()
 
-
-        Dim keyList = New List(Of Key)
-
-        'get every key avaible in the Keys Enum and add to a list 
-        For Each itm In [Enum].GetValues(GetType(Keys))
-            keyList.Add(New Key(DirectCast(itm, Keys)))
-        Next
-
-
-        Key1ComboBox.DataSource = keyList
-
-        'when you don't do .ToArray an the keylist it will bind both to the same list
-        'which will trigger the selection event on both comboxes at the same time
-        Key2ComboBox.DataSource = keyList.ToArray
-
-        Key1ComboBox.SelectedIndex = My.Settings.Keys.X
-        Key2ComboBox.SelectedIndex = My.Settings.Keys.Y
-
-    End Sub
 
 
     Private Sub minimizeInTray()
@@ -131,8 +104,6 @@ Public Class FindMouseForm
         'load "Start with windows" from registry
         SetCheckBox()
 
-        'fill hotkey comboboxes with windows keys
-        FillComboBoxes()
 
         'start the timer that look if a key was pressed
         startTimer()
@@ -143,18 +114,6 @@ Public Class FindMouseForm
         Me.Icon = My.Resources.mouse
 
     End Sub
-
-    Private Sub Key1ComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Key1ComboBox.SelectedIndexChanged, Key2ComboBox.SelectedIndexChanged
-
-        If isStared = True Then
-            My.Settings.Reload()
-            My.Settings.Keys = New Point(Key1ComboBox.SelectedIndex, Key2ComboBox.SelectedIndex)
-            My.Settings.Save()
-        End If
-
-    End Sub
-
-
 
     Private Sub SetCheckBox()
         Try
@@ -238,5 +197,17 @@ Public Class FindMouseForm
 
     End Sub
 
+
+    Private Sub AddKeyButton_Click(sender As Object, e As EventArgs) Handles AddKeyButton.Click
+
+        Dim AddKeyDialog As New SelectKeyForm
+
+        If AddKeyDialog.ShowDialog = Windows.Forms.DialogResult.OK Then
+
+            DeleteButtonListBox1.Items.Add(New ListItem(AddKeyDialog.SelectedKey))
+            DeleteButtonListBox1.AutoScroll = True
+
+        End If
+    End Sub
 End Class
 

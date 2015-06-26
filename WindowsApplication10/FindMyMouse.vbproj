@@ -77,6 +77,16 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DeleteButtonItemList.vb" />
+    <Compile Include="DeleteButtonListBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ListItem.Designer.vb">
+      <DependentUpon>ListItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ListItem.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="MainForm.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -103,8 +113,32 @@
     <Compile Include="NumTextbox.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Scroller.Designer.vb">
+      <DependentUpon>Scroller.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Scroller.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SelectKeyForm.Designer.vb">
+      <DependentUpon>SelectKeyForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SelectKeyForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestForm.Designer.vb">
+      <DependentUpon>TestForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TestForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DeleteButtonListBox.resx">
+      <DependentUpon>DeleteButtonListBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListItem.resx">
+      <DependentUpon>ListItem.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -113,6 +147,15 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scroller.resx">
+      <DependentUpon>Scroller.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectKeyForm.resx">
+      <DependentUpon>SelectKeyForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestForm.resx">
+      <DependentUpon>TestForm.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
