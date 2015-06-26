@@ -10,6 +10,12 @@
 \\ad01\benutzer\grinspun\eigene dateien\visual studio 2013\Projects\WindowsApplication10\WindowsApplication10\obj\Debug\FindMyMouse.pdb
 \\ad01\Benutzer\Grinspun\Eigene Dateien\Visual Studio 2013\Projects\WindowsApplication10\WindowsApplication10\obj\Debug\FindMyMouse.vbprojResolveAssemblyReference.cache
 C:\CodeGitHub\FindMyMouse\WindowsApplication10\bin\Debug\FindMyMouse.exe.config
+C:\CodeGitHub\FindMyMouse\WindowsApplication10\bin\Debug\FindMyMouse.exe
+C:\CodeGitHub\FindMyMouse\WindowsApplication10\bin\Debug\FindMyMouse.pdb
+C:\CodeGitHub\FindMyMouse\WindowsApplication10\bin\Debug\FindMyMouse.xml
+C:\CodeGitHub\FindMyMouse\WindowsApplication10\obj\Debug\FindMyMouse.FindMouseForm.resources
+C:\CodeGitHub\FindMyMouse\WindowsApplication10\obj\Debug\FindMyMouse.Resources.resources
+C:\CodeGitHub\FindMyMouse\WindowsApplication10\obj\Debug\FindMyMouse.vbproj.GenerateResource.Cache
 C:\CodeGitHub\FindMyMouse\WindowsApplication10\obj\Debug\FindMyMouse.exe
 C:\CodeGitHub\FindMyMouse\WindowsApplication10\obj\Debug\FindMyMouse.xml
 C:\CodeGitHub\FindMyMouse\WindowsApplication10\obj\Debug\FindMyMouse.pdb

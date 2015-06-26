@@ -31,8 +31,8 @@ Partial Class FindMouseForm
         Me.Key2Label = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.NumTextbox2 = New FindMyMouse.NumTextbox()
-        Me.NumTextbox1 = New FindMyMouse.NumTextbox()
+        Me.YTextBox = New FindMyMouse.NumTextbox()
+        Me.XTextBox = New FindMyMouse.NumTextbox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -102,8 +102,8 @@ Partial Class FindMouseForm
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.NumTextbox2)
-        Me.GroupBox1.Controls.Add(Me.NumTextbox1)
+        Me.GroupBox1.Controls.Add(Me.YTextBox)
+        Me.GroupBox1.Controls.Add(Me.XTextBox)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 118)
@@ -127,21 +127,21 @@ Partial Class FindMouseForm
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Shortcut"
         '
-        'NumTextbox2
+        'YTextBox
         '
-        Me.NumTextbox2.Location = New System.Drawing.Point(173, 58)
-        Me.NumTextbox2.Name = "NumTextbox2"
-        Me.NumTextbox2.Size = New System.Drawing.Size(123, 22)
-        Me.NumTextbox2.TabIndex = 5
-        Me.NumTextbox2.Text = "0"
+        Me.YTextBox.Location = New System.Drawing.Point(173, 58)
+        Me.YTextBox.Name = "YTextBox"
+        Me.YTextBox.Size = New System.Drawing.Size(123, 22)
+        Me.YTextBox.TabIndex = 5
+        Me.YTextBox.Text = "0"
         '
-        'NumTextbox1
+        'XTextBox
         '
-        Me.NumTextbox1.Location = New System.Drawing.Point(9, 58)
-        Me.NumTextbox1.Name = "NumTextbox1"
-        Me.NumTextbox1.Size = New System.Drawing.Size(123, 22)
-        Me.NumTextbox1.TabIndex = 4
-        Me.NumTextbox1.Text = "0"
+        Me.XTextBox.Location = New System.Drawing.Point(9, 58)
+        Me.XTextBox.Name = "XTextBox"
+        Me.XTextBox.Size = New System.Drawing.Size(123, 22)
+        Me.XTextBox.TabIndex = 4
+        Me.XTextBox.Text = "0"
         '
         'FindMouseForm
         '
@@ -161,10 +161,8 @@ Partial Class FindMouseForm
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents XTextBox As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents YTextBox As System.Windows.Forms.TextBox
     Friend WithEvents Key1ComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents PlusLabel As System.Windows.Forms.Label
     Friend WithEvents Key2ComboBox As System.Windows.Forms.ComboBox
@@ -172,7 +170,7 @@ Partial Class FindMouseForm
     Friend WithEvents Key2Label As System.Windows.Forms.Label
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents NumTextbox2 As FindMyMouse.NumTextbox
-    Friend WithEvents NumTextbox1 As FindMyMouse.NumTextbox
+    Friend WithEvents YTextBox As FindMyMouse.NumTextbox
+    Friend WithEvents XTextBox As FindMyMouse.NumTextbox
 
 End Class
